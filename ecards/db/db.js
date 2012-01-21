@@ -9,14 +9,24 @@ var sequelize = new Sequelize('ecard', 'ecard', 'ecards', {
 
 var Page = sequelize.define('Page',{
   title: Sequelize.STRING,
-  text: Sequelize.STRING,
+  text: Sequelize.STRING
 });
 
 var ECard = sequelize.define('ECard', {
   title: Sequelize.STRING,
   link: Sequelize.STRING
+
 });
 
+var SendedEcard = sequelize.define('SendedEcard', {
+  title: Sequelize.STRING,
+  wishes: Sequelize.TEXT
+});
+
+SendedEcard.hasOne(ECard);
+
 module.exports = {sequelize: sequelize,
-    ecard: ECard
+    ecard: ECard,
+    page: Page,
+    sended: SendedEcard
 };

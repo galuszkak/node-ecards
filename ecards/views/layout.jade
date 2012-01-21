@@ -3,4 +3,24 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body!= body
+    script(src='/javascripts/jquery.min.js', type='text/javascript')
+    script(src='/javascripts/script.js', type='text/javascript')
+  body
+    .topbar
+      .fill
+        .container
+          a.brand(href="#") ECards for Facebook
+          ul.nav
+            li 
+              a(href='/') Home
+            li
+              a(href='/ecards/') ECards
+            li
+              a(href='/about/') About
+          h2  
+    .container#main_cont
+      .content
+        .page-header
+          h1= title
+            small Welcome #{user}
+    div!= body
