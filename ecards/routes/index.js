@@ -2,15 +2,15 @@
 /*
  * GET home page.
  */
-var ecard = require('../db/db.js');
+var seq = require('../db/db.js');
+
 exports.index = function(req, res){
   var user = req.session.auth.facebook.user.first_name;
-  res.render('index', { title: 'Home ECards', 'user': user  });
+  res.render('index', { title: 'Home ECards', user: user  });
 };
 
 exports.about = function(req, res){
-  
-  
+    
   res.render('about', { title: 'About' });
 };
 

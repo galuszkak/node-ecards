@@ -23,7 +23,7 @@ var SendedEcard = sequelize.define('SendedEcard', {
   wishes: Sequelize.TEXT
 });
 
-SendedEcard.hasOne(ECard);
+SendedEcard.belongsTo(ECard);
 
 module.exports = {sequelize: sequelize,
     ecard: ECard,
